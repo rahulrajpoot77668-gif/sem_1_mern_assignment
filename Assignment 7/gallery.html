@@ -14,7 +14,13 @@
 
     * { box-sizing: border-box; }
     body { margin: 0; }
-    a { color: inherit; }
+    a {     color: inherit;
+    }
+
+    a:focus-visible {
+    outline: 3px solid #d7ed9b;
+    outline-offset: 3px;
+    border-radius: 4px; }
 
     .page { width: min(1200px, 100% - 3rem); margin: 0 auto; padding: 2rem 0 4rem; }
     .topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }

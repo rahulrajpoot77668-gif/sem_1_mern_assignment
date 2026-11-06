@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive product collection using CSS Grid auto-fit and minmax.">
+  <title>Common Ground — Everyday essentials</title>
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202b25;
+      background: #f6f5f0;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: inherit; }
+
+    .page { width: min(1180px, 100% - 3rem); margin: 0 auto; padding-bottom: 4rem; }
+    .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 0; border-bottom: 1px solid #dedfd8; }
+    .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+    .back-link { color: #617066; font-size: .9rem; text-decoration: none; }
+    .back-link:hover { color: #202b25; }
+    .intro { padding: 4rem 0 2.3rem; }
+    .eyebrow { margin: 0 0 .75rem; color: #68816b; font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 400; letter-spacing: -.055em; line-height: 1; }
+    .intro p:last-child { max-width: 520px; margin: 1rem 0 0; color: #69756d; line-height: 1.65; }
+    .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 0 0 1rem; }
+    h2 { margin: 0; font-size: 1rem; }
+    .item-count { color: #69756d; font-size: .85rem; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .product-card { overflow: hidden; border-radius: 12px; background: #fff; }
+    .product-image { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; background: #e8e9e2; }
+    .product-info { padding: 1rem; }
+    .product-type { margin: 0 0 .4rem; color: #748078; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .product-name { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
+    .product-bottom { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-top: .8rem; }
+    .price { font-weight: 700; }
+    .swatch { display: inline-block; width: 14px; height: 14px; margin-left: .25rem; border: 1px solid #17231e20; border-radius: 50%; vertical-align: -2px; }
+    .sand { background: #cfbda2; }
+    .sage { background: #94a38f; }
+    .clay { background: #b36d52; }
+    .navy { background: #34495a; }
+
+    @media (max-width: 480px) {
+      .page { width: min(100% - 1.5rem, 1180px); }
+      .site-header { padding: 1.2rem 0; }
+      .intro { padding: 3rem 0 1.8rem; }
+      .product-grid { gap: .75rem; }
+      .product-info { padding: .8rem; }
+      .product-name { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <a class="brand" href="assin7.html">common ground</a>
+      <a class="back-link" href="assin7.html">← All Grid lessons</a>
+    </header>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Objects for everyday rituals</p>
+      <h1 id="page-title">Made to be kept.</h1>
+      <p>Thoughtful staples in natural materials, designed to feel at home wherever you land.</p>
+    </section>
+    <section aria-labelledby="collection-title">
+      <div class="section-heading">
+        <h2 id="collection-title">The considered collection</h2>
+        <span class="item-count">8 pieces</span>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Minimal wristwatch with a light face and dark band" loading="lazy">
+          <div class="product-info"><p class="product-type">Accessories</p><h3 class="product-name">Everyday watch</h3><div class="product-bottom"><span class="price">$128</span><span aria-label="Available in sand and navy"><i class="swatch sand"></i><i class="swatch navy"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Open paper notebook with a pencil on top" loading="lazy">
+          <div class="product-info"><p class="product-type">Paper goods</p><h3 class="product-name">Field journal</h3><div class="product-bottom"><span class="price">$24</span><span aria-label="Available in sand"><i class="swatch sand"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Classic sunglasses resting in warm sunlight" loading="lazy">
+          <div class="product-info"><p class="product-type">Accessories</p><h3 class="product-name">Sunday sunglasses</h3><div class="product-bottom"><span class="price">$68</span><span aria-label="Available in clay and navy"><i class="swatch clay"></i><i class="swatch navy"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Vintage camera ready for a day out" loading="lazy">
+          <div class="product-info"><p class="product-type">Objects</p><h3 class="product-name">Pocket camera</h3><div class="product-bottom"><span class="price">$156</span><span aria-label="Available in sage"><i class="swatch sage"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bright red low-top sneaker on a light background" loading="lazy">
+          <div class="product-info"><p class="product-type">Wear</p><h3 class="product-name">Daylight sneaker</h3><div class="product-bottom"><span class="price">$92</span><span aria-label="Available in clay"><i class="swatch clay"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Simple wooden chair in a warm, minimal room" loading="lazy">
+          <div class="product-info"><p class="product-type">Home</p><h3 class="product-name">Studio chair</h3><div class="product-bottom"><span class="price">$240</span><span aria-label="Available in sand and sage"><i class="swatch sand"></i><i class="swatch sage"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Neutral everyday clothing styled in soft daylight" loading="lazy">
+          <div class="product-info"><p class="product-type">Wear</p><h3 class="product-name">Canvas overshirt</h3><div class="product-bottom"><span class="price">$84</span><span aria-label="Available in sage and sand"><i class="swatch sage"></i><i class="swatch sand"></i></span></div></div>
+        </article>
+        <article class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Travel bag packed for a weekend away" loading="lazy">
+          <div class="product-info"><p class="product-type">Travel</p><h3 class="product-name">Weekender tote</h3><div class="product-bottom"><span class="price">$76</span><span aria-label="Available in clay and navy"><i class="swatch clay"></i><i class="swatch navy"></i></span></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

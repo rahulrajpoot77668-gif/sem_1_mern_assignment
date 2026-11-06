@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A hands-on introduction to CSS Grid through three small layouts.">
+  <title>Grid Lab | CSS Grid practice</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17231e;
+      background: #f4f6f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    main { width: min(100%, 980px); }
+    .eyebrow { color: #547b5a; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: .55rem 0; font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: -.06em; }
+    .intro { max-width: 580px; color: #647169; font-size: 1.1rem; line-height: 1.7; }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .lesson {
+      min-height: 210px;
+      padding: 1.5rem;
+      border: 1px solid #e1e7df;
+      border-radius: 18px;
+      background: #fff;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .lesson:hover { transform: translateY(-4px); box-shadow: 0 14px 32px #17231e12; }
+    .lesson:focus-visible { outline: 3px solid #547b5a; outline-offset: 4px; }
+    .number { color: #79947c; font-size: .85rem; font-weight: 700; }
+    h2 { margin: 1.3rem 0 .45rem; font-size: 1.35rem; }
+    .lesson p { margin: 0; color: #647169; line-height: 1.55; }
+    footer { margin-top: 2rem; color: #647169; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Assignment 7 · Layout fundamentals</p>
+    <h1>Welcome to Grid Lab.</h1>
+    <p class="intro">Explore how CSS Grid organizes content in two dimensions. Each page focuses on one practical layout pattern.</p>
+    <nav class="lesson-grid" aria-label="Grid layout examples">
+      <a class="lesson" href="gallery.html">
+        <span class="number">01 / GALLERY</span>
+        <h2>Arrange a photo wall</h2>
+        <p>Build a gallery with explicit columns, gaps, and tiles that span multiple tracks.</p>
+      </a>
+      <a class="lesson" href="product-grid.html">
+        <span class="number">02 / AUTO-FIT</span>
+        <h2>Let the grid reflow</h2>
+        <p>Use auto-fit and minmax so product cards adapt to the available space.</p>
+      </a>
+      <a class="lesson" href="dashboard.html">
+        <span class="number">03 / AREAS</span>
+        <h2>Name the layout</h2>
+        <p>Compose a dashboard with named header, sidebar, main, and footer areas.</p>
+      </a>
+    </nav>
+    <footer>Three layouts. One powerful tool: CSS Grid.</footer>
+  </main>
+</body>
+</html>

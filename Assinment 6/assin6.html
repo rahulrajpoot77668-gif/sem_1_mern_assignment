@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Morrow & Moss is your neighborhood cafe for thoughtful coffee, fresh bakes, and a slower start.">
+    <title>Morrow &amp; Moss | Coffee for a slower morning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #26342b;
+            --muted: #647064;
+            --cream: #f7f4ed;
+            --white: #fffefa;
+            --green: #435b45;
+            --orange: #c7784f;
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: var(--sans);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--orange);
+            outline-offset: 3px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 690px;
+            overflow: hidden;
+            background-color: #39483b;
+            background-image: url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85");
+            background-position: center 54%;
+            background-size: cover;
+            color: var(--white);
+        }
+
+        .hero::before {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(20, 31, 24, 0.83), rgba(20, 31, 24, 0.24));
+            content: "";
+        }
+
+        .hero-nav,
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-nav {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 22px 30px;
+            border-bottom: 1px solid rgba(255, 254, 250, 0.32);
+        }
+
+        .brand {
+            display: inline-block;
+            font-family: var(--serif);
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: #e4a77f;
+        }
+
+        .nav-links {
+            float: right;
+            margin: 5px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 28px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #f0bf9d;
+        }
+
+        .hero-copy {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 130px 30px 150px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: #e6b18e;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.17em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--serif);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            max-width: 680px;
+            margin: 0 0 18px;
+            font-size: clamp(3rem, 7vw, 5.7rem);
+            letter-spacing: -0.035em;
+        }
+
+        .hero-copy > p:not(.eyebrow) {
+            max-width: 520px;
+            margin: 0 0 30px;
+            color: rgba(255, 254, 250, 0.88);
+            font-size: 1.1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border: 1px solid var(--orange);
+            border-radius: 3px;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 180ms ease, color 180ms ease;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 90px 30px;
+        }
+
+        .section-title {
+            max-width: 660px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .section-title .eyebrow {
+            color: var(--orange);
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            letter-spacing: -0.025em;
+        }
+
+        .section-title > p:last-child {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .about {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 30px 78px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .about p {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .about strong {
+            color: var(--ink);
+        }
+
+        .services {
+            border-top: 1px solid #e6e0d5;
+        }
+
+        .service-card {
+            display: inline-block;
+            width: 31.7%;
+            min-height: 245px;
+            margin: 0 1.6% 18px 0;
+            padding: 28px 25px;
+            vertical-align: top;
+        }
+
+        .service-card:last-child {
+            margin-right: 0;
+        }
+
+        .service-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.55rem;
+        }
+
+        .service-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .service-card p strong {
+            display: block;
+            margin-top: 14px;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+        }
+
+        .card-coffee {
+            border: 1px solid #d5c9b6;
+            border-radius: 4px;
+            background: #fffefa;
+            box-shadow: 0 8px 18px rgba(38, 52, 43, 0.06);
+        }
+
+        .card-bakes {
+            border: 1px solid #e8dccb;
+            border-radius: 28px 4px 28px 4px;
+            background: #efe5d7;
+        }
+
+        .card-space {
+            border: 1px solid var(--green);
+            border-radius: 4px;
+            background: var(--green);
+            box-shadow: 0 12px 24px rgba(38, 52, 43, 0.16);
+            color: var(--white);
+        }
+
+        .gallery {
+            max-width: none;
+            padding-right: max(30px, calc((100% - 1100px) / 2));
+            padding-left: max(30px, calc((100% - 1100px) / 2));
+            background: #eae5da;
+        }
+
+        .gallery-strip {
+            white-space: nowrap;
+            overflow-x: auto;
+            padding: 4px 4px 18px;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 31.5%;
+            margin-right: 1.5%;
+            vertical-align: top;
+            white-space: normal;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 245px;
+            border: 4px solid var(--white);
+            border-radius: 4px;
+            box-shadow: 0 8px 18px rgba(38, 52, 43, 0.1);
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            margin: 12px 4px 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .visit {
+            padding-bottom: 100px;
+        }
+
+        .visit-details {
+            display: inline-block;
+            width: 42%;
+            margin: 0 6% 28px 0;
+            vertical-align: top;
+        }
+
+        .visit-details h3 {
+            margin: 0 0 8px;
+            font-size: 1.4rem;
+        }
+
+        .visit-details p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+
+        .contact-form {
+            display: inline-block;
+            width: 49%;
+            padding: 26px;
+            border: 1px solid #e3dccf;
+            border-radius: 6px;
+            background: var(--white);
+            box-shadow: 0 8px 22px rgba(38, 52, 43, 0.06);
+            vertical-align: top;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 0 0 5px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            display: block;
+            width: 100%;
+            margin: 0 0 16px;
+            padding: 11px 12px;
+            border: 1px solid #d9d4ca;
+            border-radius: 3px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            font-family: var(--sans);
+            cursor: pointer;
+        }
+
+        .site-footer {
+            padding: 35px 30px;
+            background: #26342b;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-brand {
+            margin: 0 0 8px;
+            font-family: var(--serif);
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            margin: 8px 0;
+        }
+
+        .footer-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #e6b18e;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin: 12px 0 0;
+            color: rgba(255, 254, 250, 0.65);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 760px) {
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-copy {
+                padding-top: 110px;
+            }
+
+            .service-card {
+                width: 47.5%;
+                margin-right: 2%;
+            }
+
+            .service-card:nth-child(2) {
+                margin-right: 0;
+            }
+
+            .gallery-item {
+                width: 60%;
+            }
+
+            .visit-details,
+            .contact-form {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero {
+                min-height: 620px;
+            }
+
+            .hero-nav {
+                padding: 18px 20px;
+            }
+
+            .nav-links {
+                margin-top: 3px;
+            }
+
+            .nav-links li {
+                margin-left: 12px;
+            }
+
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+
+            .hero-copy {
+                padding: 120px 22px 100px;
+            }
+
+            .section {
+                padding: 68px 22px;
+            }
+
+            .about {
+                padding: 0 22px 60px;
+            }
+
+            .service-card {
+                width: 100%;
+                min-height: 0;
+                margin: 0 0 14px;
+            }
+
+            .gallery {
+                padding-right: 22px;
+                padding-left: 22px;
+            }
+
+            .gallery-item {
+                width: 86%;
+            }
+
+            .gallery-item img {
+                height: 220px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .site-footer {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero" id="home">
+        <nav class="hero-nav" aria-label="Main navigation">
+            <a class="brand" href="#home">Morrow <span>&amp;</span> Moss</a>
+            <ul class="nav-links">
+                <li><a href="#story">Our story</a></li>
+                <li><a href="#menu">What we serve</a></li>
+                <li><a href="#visit">Find us</a></li>
+            </ul>
+        </nav>
+        <div class="hero-copy">
+            <p class="eyebrow">Good coffee. Good company.</p>
+            <h1>A softer start to your day.</h1>
+            <p>Thoughtful coffee, fresh-from-the-oven bakes, and a little room to slow down.</p>
+            <a class="button" href="#menu">Come on in</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section services" id="menu" aria-labelledby="menu-title">
+            <div class="section-title">
+                <p class="eyebrow">A few of our favourites</p>
+                <h2 id="menu-title">Made for your kind of morning.</h2>
+                <p>From the first pour to the last crumb, everything is made with care.</p>
+            </div>
+            <article class="service-card card-coffee">
+                <h3>Slow-poured coffee</h3>
+                <p>Small-batch beans, carefully sourced and brewed just the way you like them.</p>
+                <p><strong>Espresso · Filter · Oat latte</strong></p>
+            </article>
+            <article class="service-card card-bakes">
+                <h3>Something fresh</h3>
+                <p>Morning buns, buttery croissants, and seasonal treats from our little kitchen.</p>
+                <p><strong>Baked here every morning</strong></p>
+            </article>
+            <article class="service-card card-space">
+                <h3>Stay a while</h3>
+                <p>A sunny window seat, a good book, or a catch-up with someone you love.</p>
+                <p><strong>Your neighborhood table awaits</strong></p>
+            </article>
+        </section>
+
+        <section class="about" id="story" aria-label="Our story">
+            <p><strong>Morrow &amp; Moss is a neighborhood cafe for unhurried mornings.</strong> We believe a good cup is about more than coffee: it's a small ritual, a familiar face, and a place that feels like yours. Pull up a chair. There's always time for one more sip.</p>
+        </section>
+
+        <section class="section gallery" aria-labelledby="gallery-title">
+            <div class="section-title">
+                <p class="eyebrow">A peek inside</p>
+                <h2 id="gallery-title">Your new little corner.</h2>
+                <p>Sunlight, warm cups, and something delicious waiting at the counter.</p>
+            </div>
+            <div class="gallery-strip" aria-label="Cafe gallery; scroll horizontally to see every photo">
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Freshly brewed coffee served at a cafe table" loading="lazy">
+                    <figcaption><p>A fresh pour, just for you.</p></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="A warm and welcoming neighborhood cafe interior" loading="lazy">
+                    <figcaption><p>Make yourself at home.</p></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Cozy cafe seating with a relaxed atmosphere" loading="lazy">
+                    <figcaption><p>There’s always room at the table.</p></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section visit" id="visit" aria-labelledby="visit-title">
+            <div class="section-title">
+                <p class="eyebrow">The kettle's on</p>
+                <h2 id="visit-title">Come find us.</h2>
+                <p>Drop by for a coffee or send us a note. We'd love to hear from you.</p>
+            </div>
+            <div class="visit-details">
+                <h3>Find your way here</h3>
+                <p>18 Garden Lane<br>Meerut, Uttar Pradesh</p>
+                <h3>Opening hours</h3>
+                <p>Monday–Friday: 8:00 am–5:00 pm<br>Saturday–Sunday: 9:00 am–4:00 pm</p>
+                <p><a href="mailto:hello@morrowandmoss.example">hello@morrowandmoss.example</a></p>
+            </div>
+            <form class="contact-form" action="mailto:hello@morrowandmoss.example" method="post" enctype="text/plain">
+                <label for="guest-name">Your name</label>
+                <input id="guest-name" name="name" type="text" placeholder="How should we call you?" required>
+                <label for="guest-email">Email address</label>
+                <input id="guest-email" name="email" type="email" placeholder="you@example.com" required>
+                <label for="guest-message">Your message</label>
+                <textarea id="guest-message" name="message" placeholder="Ask us anything, or just say hello." required></textarea>
+                <button class="button" type="submit">Send a little note</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">Morrow &amp; Moss</p>
+        <p>Good things take time. Take a little.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="#story">Our story</a>
+            <a href="#menu">Menu</a>
+            <a href="#visit">Contact</a>
+            <a href="#home">Back to top ↑</a>
+        </nav>
+        <p class="copyright">© 2026 Morrow &amp; Moss Cafe. Made with care.</p>
+    </footer>
+</body>
+</html>

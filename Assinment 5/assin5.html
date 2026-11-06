@@ -40,6 +40,23 @@
             color: inherit;
         }
 
+        .skip-link {
+            position: absolute;
+            z-index: 5;
+            top: 12px;
+            left: 12px;
+            padding: 10px 14px;
+            transform: translateY(-160%);
+            border-radius: 4px;
+            background: var(--paper);
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
         a:focus-visible,
         input:focus-visible,
         textarea:focus-visible {
@@ -478,6 +495,7 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="hero" id="home">
         <nav class="hero-nav" aria-label="Main navigation">
             <a class="brand" href="#home">goodgrain<span>.</span></a>
@@ -495,7 +513,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" id="story" aria-labelledby="story-title">
             <div class="section-heading">
                 <p class="eyebrow">Made with time, shared with love</p>

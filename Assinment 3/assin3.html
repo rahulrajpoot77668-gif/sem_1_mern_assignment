@@ -6,95 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Big Styled Table</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #eef3f6;
-    padding: 30px;
-    color: #263746;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #263746;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    color: #84919b;
-    margin-bottom: 35px;
-}
-
-h3 {
-    color: #34495e;
-    margin-bottom: 20px;
-}
-
-caption {
-    padding: 0 0 12px;
-    color: #526d80;
-    font-weight: bold;
-    text-align: left;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 14px;
-}
-
-th {
-    background: #526d80;
-    color: white;
-    padding: 14px 10px;
-    border: 1px solid #d5dfe5;
-}
-
-td {
-    padding: 12px 10px;
-    border: 1px solid #dce4e9;
-}
-
-tbody tr:nth-child(even) {
-    background: #e9f0f4;
-}
-
-tbody tr:nth-child(odd) {
-    background: #f7f9fa;
-}
-
-tbody tr:hover {
-    background: #dceaf2;
-}
-
-.brand {
-    font-weight: bold;
-    text-align: center;
-    background: #dce7ed;
-}
-
-.price {
-    font-weight: bold;
-    color: #34495e;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -142,61 +54,7 @@ Week 4 - 20 data rows x 10 columns • Illustrative expected output
 </div>
 </div>
 
-<script>
-
-const sizes = ["S", "M", "L", "XL"];
-const chest = [36, 38, 40, 42];
-const waist = [30, 32, 34, 36];
-const length = [26, 27, 28, 29];
-const sleeve = [16, 17, 18];
-const colours = ["Navy", "White", "Olive", "Black"];
-
-let tableBody = document.getElementById("tableBody");
-
-for (let i = 1; i <= 20; i++) {
-
-    let brand = i <= 10 ? "Campus" : "Everyday";
-
-    let row = document.createElement("tr");
-
-    if (i === 1 || i === 11) {
-        let brandCell = document.createElement("td");
-        brandCell.rowSpan = 10;
-        brandCell.className = "brand";
-        brandCell.textContent = brand;
-        row.appendChild(brandCell);
-    }
-
-    let index = (i - 1) % 4;
-
-    let data = [
-        "TS-" + String(i).padStart(2, "0"),
-        sizes[index],
-        chest[index],
-        waist[index],
-        length[index],
-        sleeve[(i - 1) % 3],
-        colours[(i - 1) % 4],
-        11 + i,
-        "₹" + (479 + i * 20)
-    ];
-
-    data.forEach((value, j) => {
-
-        let cell = document.createElement("td");
-        cell.textContent = value;
-
-        if (j === 8) {
-            cell.className = "price";
-        }
-
-        row.appendChild(cell);
-    });
-
-    tableBody.appendChild(row);
-}
-
-</script>
+<script src="assin3.js" defer></script>
 
 </body>
 </html>

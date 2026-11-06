@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Illustrated profile portrait</title>
+  <defs>
+    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e8f0f7"/>
+      <stop offset="1" stop-color="#bfd0df"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#486681"/>
+      <stop offset="1" stop-color="#293f56"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="28" fill="url(#background)"/>
+  <circle cx="80" cy="68" r="34" fill="#c98768"/>
+  <path d="M47 64c1-27 16-43 35-43 20 0 35 17 34 43-8-4-14-12-17-20-10 11-27 17-52 20z" fill="#27323c"/>
+  <path d="M23 160c3-39 24-59 57-59s54 20 57 59" fill="url(#shirt)"/>
+  <path d="M63 101c4 11 10 16 17 16s14-5 18-16l11 8c-7 15-17 23-29 23s-22-8-29-23z" fill="#fffefa"/>
+  <circle cx="68" cy="70" r="3" fill="#27323c"/>
+  <circle cx="93" cy="70" r="3" fill="#27323c"/>
+  <path d="M72 85c5 4 11 4 16 0" fill="none" stroke="#8c5144" stroke-linecap="round" stroke-width="3"/>
+</svg>

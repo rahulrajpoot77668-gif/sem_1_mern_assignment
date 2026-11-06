@@ -474,6 +474,95 @@
         transition-duration: .01ms !important;
       }
     }
+
+    @media print {
+      @page {
+        margin: 18mm;
+      }
+
+      body {
+        background: #fff;
+        color: #17241e;
+        font-size: 11pt;
+      }
+
+      .page-width {
+        width: 100%;
+      }
+
+      .site-header nav,
+      .hero-actions,
+      .section-heading .text-link,
+      .newsletter .button-primary,
+      .site-footer {
+        display: none;
+      }
+
+      .site-header {
+        min-height: 0;
+        padding: 0 0 10px;
+      }
+
+      .hero {
+        min-height: 0;
+        border-bottom: 1px solid #cfd6cc;
+        border-radius: 0;
+        background: #fff;
+        color: #17241e;
+      }
+
+      .hero::before {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 18px 0;
+      }
+
+      .hero .eyebrow,
+      .hero-description {
+        color: #364c3e;
+      }
+
+      .intro-section {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+        padding: 28px 0 16px;
+      }
+
+      .destinations {
+        padding: 18px 0 30px;
+      }
+
+      .destination-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .destination-card {
+        break-inside: avoid;
+        border: 1px solid #dfe2d9;
+        box-shadow: none;
+      }
+
+      .destination-card img {
+        aspect-ratio: 1.35 / 1;
+      }
+
+      .card-copy {
+        padding: 10px;
+      }
+
+      .quote-band {
+        padding: 24px 12px;
+        border-block: 1px solid #dfe2d9;
+        background: #fff;
+      }
+
+      .newsletter {
+        padding: 24px 0 0;
+      }
+    }
   </style>
 </head>
 <body>

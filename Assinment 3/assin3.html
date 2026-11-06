@@ -42,6 +42,13 @@ h3 {
     margin-bottom: 20px;
 }
 
+caption {
+    padding: 0 0 12px;
+    color: #526d80;
+    font-weight: bold;
+    text-align: left;
+}
+
 .table-wrapper {
     overflow-x: auto;
 }
@@ -106,22 +113,24 @@ Week 4 - 20 data rows x 10 columns • Illustrative expected output
 
 <table>
 
+<caption>Campus Store T-shirt sizes, measurements, stock, and prices</caption>
+
 <thead>
 <tr>
-    <th rowspan="2">Brand</th>
-    <th rowspan="2">SKU</th>
-    <th rowspan="2">Size</th>
-    <th colspan="4">Measurements (inches)</th>
-    <th rowspan="2">Colour</th>
-    <th rowspan="2">Stock</th>
-    <th rowspan="2">Price</th>
+    <th rowspan="2" scope="col">Brand</th>
+    <th rowspan="2" scope="col">SKU</th>
+    <th rowspan="2" scope="col">Size</th>
+    <th colspan="4" scope="colgroup">Measurements (inches)</th>
+    <th rowspan="2" scope="col">Colour</th>
+    <th rowspan="2" scope="col">Stock</th>
+    <th rowspan="2" scope="col">Price</th>
 </tr>
 
 <tr>
-    <th>Chest</th>
-    <th>Waist</th>
-    <th>Length</th>
-    <th>Sleeve</th>
+    <th scope="col">Chest</th>
+    <th scope="col">Waist</th>
+    <th scope="col">Length</th>
+    <th scope="col">Sleeve</th>
 </tr>
 </thead>
 

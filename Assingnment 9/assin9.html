@@ -275,6 +275,189 @@
       color: var(--muted);
       font-size: 13px;
     }
+
+    a:focus-visible {
+      outline: 3px solid #8ca65b;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        padding: 22px 5%;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .hero {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 4%;
+        min-height: 480px;
+        padding: 30px 5% 56px;
+      }
+
+      .hero-image {
+        height: 410px;
+      }
+
+      .features,
+      .destinations {
+        padding: 68px 5%;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .site-footer {
+        flex-wrap: wrap;
+        gap: 18px 28px;
+        padding: 30px 5%;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px 12px;
+        padding: 20px 6%;
+      }
+
+      .brand {
+        font-size: 28px;
+      }
+
+      .nav-cta {
+        padding: 11px 15px;
+        font-size: 12px;
+      }
+
+      .site-header > nav {
+        grid-column: 1 / -1;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid #e3e3dc;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid #e3e3dc;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        min-height: auto;
+        padding: 28px 6% 52px;
+      }
+
+      .eyebrow {
+        margin-bottom: 17px;
+        font-size: 11px;
+      }
+
+      h1 {
+        margin-bottom: 18px;
+        font-size: clamp(54px, 14vw, 72px);
+        letter-spacing: -3px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .button-primary,
+      .button-secondary {
+        min-height: 48px;
+        padding: 0 19px;
+        font-size: 13px;
+      }
+
+      .hero-image {
+        height: 360px;
+        border-radius: 180px 180px 16px 16px;
+      }
+
+      .features,
+      .destinations {
+        padding: 56px 6%;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        margin-bottom: 27px;
+      }
+
+      .section-heading h2 {
+        font-size: 38px;
+      }
+
+      .section-heading p {
+        font-size: 14px;
+      }
+
+      .feature-grid,
+      .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .feature-card {
+        padding: 22px;
+      }
+
+      .feature-number {
+        margin-bottom: 22px;
+      }
+
+      .destination-card img {
+        height: 245px;
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        padding: 28px 6%;
+      }
+
+      .site-footer > p {
+        margin-bottom: 0;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
   </style>
 </head>
 <body>
@@ -301,7 +484,7 @@
           <a class="button-secondary" href="#why-roam">Our approach</a>
         </div>
       </div>
-      <img class="hero-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A quiet alpine lake reflecting forested mountains at sunrise">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A quiet alpine lake reflecting forested mountains at sunrise" fetchpriority="high">
     </section>
 
     <section class="features" id="why-roam" aria-labelledby="features-title">
@@ -338,7 +521,7 @@
       </div>
       <div class="destination-grid">
         <article class="destination-card">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Snow-capped peaks beneath a star-filled night sky">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Snow-capped peaks beneath a star-filled night sky" loading="lazy" decoding="async">
           <div class="destination-info">
             <div>
               <h3>The high country</h3>
@@ -348,7 +531,7 @@
           </div>
         </article>
         <article class="destination-card">
-          <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A wooden cabin tucked among lush green forest">
+          <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A wooden cabin tucked among lush green forest" loading="lazy" decoding="async">
           <div class="destination-info">
             <div>
               <h3>Into the wild</h3>
@@ -358,7 +541,7 @@
           </div>
         </article>
         <article class="destination-card">
-          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Clear turquoise water washing onto a peaceful Mediterranean beach">
+          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Clear turquoise water washing onto a peaceful Mediterranean beach" loading="lazy" decoding="async">
           <div class="destination-info">
             <div>
               <h3>Slow by the sea</h3>
